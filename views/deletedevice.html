@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <title>MySmartHome</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+    <body>
+        <h1>Delete Device</h1>
+        <p>You can delete your device from the database:</p>
+        <div>
+            <ul id="status">
+                <% availableDevices.forEach(function(device){ %>
+                    <li><b>Name:</b> <%= device.device_name %> &emsp; <b>ID:</b> <%= device.id %></li>
+                    <li class="notfirst"><b>Type:</b> <%= device.device_type%></li>
+            <% }) %>
+            </ul>
+        </div>
+
+        <div id="devicestatus">
+            <h4><br>Delete device:</h4>
+            <p>From the list above, enter the device ID number.</p>
+                <form action = "/delete-id" method= "POST">
+                <input id = "search-box" type = "number" name = "id" value = 1>
+                <input type = "submit" value = "Submit">
+                </form>
+            <p>From the list above, enter the device name.</p>
+                <form action = "/delete-name" method= "POST">
+                <input id = "search-box" type = "text" name = "name" onfocus="this.value=''" value = ->
+                <input type = "submit" value = "Submit">
+                </form>
+            <p>From the list above, enter the device type.</p>
+                <form action = "/delete-type" method= "POST">
+                    <select type="device-types" id="device-types" name="type">
+                        <option value="Doorbell">Video doorbell</option>
+                        <option value="Thermostat">Thermostat</option>
+                        <option value="Smoke alarm">Smoke alarm</option>
+                        <option value="Doorlock">Automated door lock</option>
+                        <option value="Video">Video monitoring</option>
+                    </select><br>
+                <input type = "submit" value = "Submit">
+                </form>
+            </div>
+
+
+        <!-- <form action = "/registered" method = "POST">
+            <input id = "first" type = "text" name = "first" value = "firstname"/>
+            <input id = "last" type = "text" name = "last" value = "lastname"/>
+            <input id = "other" type = "text" name = "other" value = "othername"/>
+            <input type = "submit" value = "OK">
+        </form> -->
+
+        <h3>MENU</h3>
+        <div class="navGrid">
+            <div><h4>Home</h4>
+                <p><em><a href = "/">Home</a></em></p>
+            </div>
+            <div><h4>About MySmartHome</h4>
+                <p><em><a href = "/about">About</a></em></p>
+            </div>
+            <div><h4>Device Status</h4>
+                <p><em><a href = "/status">Device Status</a></em></p>
+            </div>
+            <div><h4>Add Device</h4>
+                <p><em><a href = "/adddevice">Add a device</a></em></p>
+            </div>
+            <div><h4>Control Device</h4>
+                <p><em><a href = "/control">Control device</a></em></p>
+            </div>
+            </div>
+
+    </body>
+</html>

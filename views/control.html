@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+    <head>
+        <title>MySmartHome</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+    <body>
+        <h1>Control Device</h1>
+        <p>You can adjust the settings of your devices:</p>
+        <ul>
+            <% availableDevices.forEach(function(device){ %>
+            <li><b>ID:</b> <%= device.id %> &emsp;
+                <b>Name:</b> <%= device.device_name %> &emsp;
+                <b>Type:</b> <%= device.device_type%> &emsp;
+                <b>Activated:</b> <%= device.activation%> &emsp;
+                <b>Locked:</b> <%= device.locked%> &emsp;
+                <b>Temperature:</b> <%= device.temperature%></li>
+        <% }) %>
+        </ul>
+
+        <form action = "/controlactivation" method = "POST">
+            <label for="id">Device ID</label><br>
+            <input id = "search-box" type = "number" name = "id" value = 1><br>
+
+            <label for="activation">Activation:</label><br>
+                <select type="activation" id="activation" name="activation">
+                    <option value="On">On</option>
+                    <option value="Off">Off</option>
+                </select><br>
+
+                <br><input type = "submit" value = "Submit" data-show-if="devicename">
+            </form><br>
+
+            <form action = "/controllocking" method = "POST">
+            <label for="id">Device ID</label><br>
+            <input id = "search-box" type = "number" name = "id" value = 1><br>
+
+            <label for="locking">Locked:</label><br>
+                <select type="locking" id="locking" name="locking">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select><br>
+
+                <br><input type = "submit" value = "Submit" data-show-if="devicename">
+            </form><br>
+
+            <form action = "/controltemperature" method = "POST">
+                <label for="id">Device ID</label><br>
+                <input id = "search-box" type = "number" name = "id" value = 1><br>
+
+            <label for="temperature">Temperature (10C - 25C)</label><br>
+                <input id = "temperature" type = "number" name="temperature" min="10" max="25"/><br>
+            
+            <br><input type = "submit" value = "Submit" data-show-if="devicename">
+        </form>
+
+
+        <h3>MENU</h3>
+        <div class="navGrid">
+            <div><h4>Home</h4>
+                <p><em><a href = "/">Home</a></em></p>
+            </div>
+            <div><h4>About MySmartHome</h4>
+                <p><em><a href = "/about">About</a></em></p>
+            </div>
+            <div><h4>Device Status</h4>
+                <p><em><a href = "/status">Device Status</a></em></p>
+            </div>
+            <div><h4>Add Device</h4>
+                <p><em><a href = "/adddevice">Add a device</a></em></p>
+            </div>
+            <div><h4>Delete Device</h4>
+                <p><em><a href = "/deletedevice">Delete device</a></em></p>
+            </div>
+            </div>
+            
+    </body>
+</html>

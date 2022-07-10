@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+header>#mainLogo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    display: block;
+}
+
+.navGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    background-color: #2E67F844;
+    padding: 5px;
+}
+
+.navGrid>div {
+    background-color: #2E67F822;
+    text-align: center;
+}
+
+.navGrid>div>a {
+    text-decoration: none;
+    font-size: 8px;
+    color: red;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navGrid>div>p>a:hover {
+    background-color: whitesmoke;
+}
+
+h1 {
+    color:darkblue;
+    font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+    color:darkblue;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+h4 {
+    color:darkblue;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    color:darkblue;
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    color:darkblue;
+    font-family: 'Roboto', sans-serif;
+}
+
+form {
+    color:darkblue;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+select {
+    color:darkgreen;
+    font-family: 'Roboto', sans-serif;
+}
+
+#status {
+    width: 400px;
+    height: 200px;
+}
+
+#status li:nth-child(odd) {
+    width: 51%;
+    float: left;
+}
+
+#status li:nth-child(odd):after {
+    content:'\2022';
+    text-align: right;
+    float: right;
+}
+
+#status li:nth-child(even) {
+    text-align: right;
+    float: right;
+    width: 49%;
+    list-style-position: inside;
+}
+
+.notfirst {
+    list-style-type: none;
+}
+
+#devicestatus {
+    margin-top: 20px;
+    height: 300px;
+}
+
+#devicestatus h4 {
+    color:darkblue;
+    font-family: 'Roboto', sans-serif;
+}
